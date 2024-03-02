@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fafafa;
+        }
+        .profile {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .profile p {
+            margin-bottom: 15px;
+        }
+        .profile p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="profile">
+    <p th:text="${user.userName}"></p>
+    <p th:text="${user.getEmail()}"></p>
+    <p th:text="${user.userInfo}">user info</p>
+    <p th:text="${user.follower.getSubscribers().size()}"></p>
+    <p th:text="${user.posts.size()}"></p>
+    <div>
+        <a th:href="@{/api/users/getUser}" role="button">Search</a>
+        <a type="button" class="btn btn-success" th:href="@{/api/users/getUser}">Search</a>
+    </div>
+</div>
+
+</body>
+</html>
