@@ -1,2 +1,5 @@
-package instagram.entity;public enum Gender {
+package instagram.entity;
+
+public enum Gender {
+    MALE, FEMALE;
 }

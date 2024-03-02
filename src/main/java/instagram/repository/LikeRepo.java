@@ -1,2 +1,7 @@
-package instagram.repository;public interface LikeRepo {
+package instagram.repository;
+
+import instagram.entity.Post;
+
+public interface LikeRepo {
+    boolean like(Long postId, Long userId);
 }
